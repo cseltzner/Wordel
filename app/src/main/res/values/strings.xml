@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Wordel</string>
+    <string name="titlebar_title">Wordel</string>
+    <string name="correct_label">Correct</string>
+    <string name="incorrect_label">Not in word</string>
+    <string name="enter_word">Enter 5 letter word</string>
+</resources>
