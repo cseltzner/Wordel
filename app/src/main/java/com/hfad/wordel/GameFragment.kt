@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hfad.wordel.databinding.FragmentGameBinding
-import java.io.File
-import java.io.FileInputStream
 private const val WORD_FILE_NAME = "words.txt"
 
 class GameFragment : Fragment() {
@@ -20,7 +17,7 @@ class GameFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentGameBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -45,6 +42,9 @@ class GameFragment : Fragment() {
             val correctList = viewModel.checkLetters(userWord.toCharArray())
             if (userWord.length != 5) {
                 Toast.makeText(context, R.string.invalid_length, Toast.LENGTH_SHORT).show()
+            }
+            else if (!isAllChars(userWord)) {
+                Toast.makeText(context, R.string.invalid_entry, Toast.LENGTH_SHORT).show()
             }
             else if (!viewModel.isWordValid(userWord, wordsFile)) {
                 Toast.makeText(context, R.string.invalid_word, Toast.LENGTH_SHORT).show()
@@ -91,6 +91,13 @@ class GameFragment : Fragment() {
 
     private fun checkForWin(correctList: List<Int>): Boolean {
         if (correctList == listOf(2, 2, 2, 2, 2)) {
+            return true
+        }
+        return false
+    }
+
+    private fun isAllChars(word: String) : Boolean {
+        if (word.matches(Regex("[a-zA-Z]+"))) {
             return true
         }
         return false
