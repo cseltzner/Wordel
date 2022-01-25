@@ -5,7 +5,7 @@ import java.io.*
 import java.util.*
 import kotlin.math.abs
 
-private const val WORDS_IN_LIST = 15912
+private const val WORDS_IN_LIST = 6234
 
 class GameViewModel: ViewModel() {
     var selectedWord = ""
