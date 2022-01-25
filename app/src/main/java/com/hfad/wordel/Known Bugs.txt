@@ -1,0 +1,4 @@
+1. Adding non-character to the text entry crashes the app
+    - sol. Limit to specific characters only
+
+

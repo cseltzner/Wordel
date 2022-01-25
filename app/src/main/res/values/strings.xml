@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Wordel</string>
     <string name="titlebar_title">Wordel</string>
-    <string name="correct_label">Correct</string>
+    <string name="correct_label">In word</string>
     <string name="incorrect_label">Not in word</string>
     <string name="enter_word">Enter 5 letter word</string>
+    <string name="invalid_length">Word must be 5 letters long</string>
+    <string name="invalid_word">Word is not in the word list</string>
+    <string name="reset">Reset</string>
+    <string name="win_text">You guessed correctly!</string>
+    <string name="lose_text">The correct word is</string>
 </resources>
