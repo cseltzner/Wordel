@@ -64,7 +64,7 @@ class GameFragment : Fragment() {
             else {
                 viewModel.saveLetters(userWord)
                 if (checkForWin(correctList)) {
-                    endGame(true, viewModel.selectedWord)
+                    endGame(true, viewModel.selectedWord, viewModel)
                 }
                 updateGrid(viewModel.turn, correctList, userWord, viewModel)
                 showGrid(viewModel)
@@ -73,7 +73,7 @@ class GameFragment : Fragment() {
             }
 
             if (viewModel.turn > 6) {
-                endGame(checkForWin(correctList), viewModel.selectedWord)
+                endGame(checkForWin(correctList), viewModel.selectedWord, viewModel)
             }
         }
 
@@ -86,16 +86,19 @@ class GameFragment : Fragment() {
         return view
     }
 
-    private fun endGame(isWon: Boolean, correctWord: String) {
+    private fun endGame(isWon: Boolean, correctWord: String, viewModel: GameViewModel) {
         binding.textEntry.visibility = View.GONE
         binding.winLoseText.visibility = View.VISIBLE
+        binding.dictionaryLink.visibility = View.VISIBLE
         if (isWon) {
             val winText = getString(R.string.win_text)
             binding.winLoseText.text = winText
+            binding.dictionaryLink.text = viewModel.linkToWord
         }
         else {
             val loseText = "${getString(R.string.lose_text)} $correctWord"
             binding.winLoseText.text = loseText
+            binding.dictionaryLink.text = viewModel.linkToWord
         }
         binding.fab.visibility = View.GONE
         binding.resetButton.visibility = View.VISIBLE
@@ -277,6 +280,7 @@ class GameFragment : Fragment() {
         binding.winLoseText.visibility = View.INVISIBLE
         binding.textEntry.visibility = View.VISIBLE
         binding.fab.visibility = View.VISIBLE
+        binding.dictionaryLink.visibility = View.GONE
     }
 
     override fun onDestroyView() {

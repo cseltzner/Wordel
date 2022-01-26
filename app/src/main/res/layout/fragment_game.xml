@@ -577,6 +577,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line_bottom_of_grid" />
 
+        <TextView
+            android:id="@+id/dictionary_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:autoLink="all"
+            android:visibility="gone"
+            android:textColorLink="@color/black_or_white"
+            app:layout_constraintTop_toBottomOf="@id/win_lose_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <Button
             android:id="@+id/reset_button"
             android:layout_width="wrap_content"
@@ -588,7 +601,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/win_lose_text" />
+            app:layout_constraintTop_toBottomOf="@id/dictionary_link" />
 
 
         <TextView
@@ -662,7 +675,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="reset_button,text_entry"
+            app:constraint_referenced_ids="reset_button,text_entry,dictionary_link"
             tools:layout_editor_absoluteY="605dp" />
 
 

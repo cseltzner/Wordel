@@ -14,9 +14,9 @@
     <string name="help">Help</string>
     <string name="help_title">Instructions</string>
 
-    <string name="help_instructions">- You have 6 tries to guess the hidden word<br/><br/>
-    - Guesses must be a valid 5 letter word. Press the floating check button to submit your guess<br/><br/>
-    - If you entered a valid guess The color of the tiles will change to clue you in on how close your guess was</string>
+    <string name="help_instructions">- You have 6 tries to guess the hidden word
+    \n\n- Guesses must be a valid 5 letter word. Press the floating check button to submit your guess
+    \n\n- If you entered a valid guess The color of the tiles will change to clue you in on how close your guess was</string>
 
     <string name="color_help_instructions_green_green_text">GREEN</string>
     <string name="color_help_instructions_green">means that the letter is in the word and is in the correct spot</string>

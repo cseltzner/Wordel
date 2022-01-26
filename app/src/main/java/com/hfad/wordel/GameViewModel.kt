@@ -15,7 +15,9 @@ class GameViewModel: ViewModel() {
     var correctLetterString = ""
     val correctLetterList = mutableListOf<Char>()
     var incorrectLetterString = ""
-    val incorrectLetterList = mutableListOf<Char>()
+    private val incorrectLetterList = mutableListOf<Char>()
+    var linkToWord = ""
+
 
     fun saveLetters(userWord: String) {
         for (i in 0 until userWord.length) {

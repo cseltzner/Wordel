@@ -17,4 +17,5 @@
     <color name="incorrect_gray">#2C2C2C</color>
     <color name="instruction_header_text_color">#D9000000</color>
     <color name="instruction_text_color">#B3000000</color>
+    <color name="black_or_white">#000000</color>
 </resources>
