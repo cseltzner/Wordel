@@ -10,8 +10,8 @@ private const val WORDS_IN_LIST = 6234
 class GameViewModel: ViewModel() {
     var selectedWord = ""
     var turn = 1
-    val gridColors = IntArray(30) { _ -> R.color.undecided_gray}
-    val gridText = Array<String>(30) { _ -> ""}
+    val gridColors = IntArray(30) { R.color.undecided_gray}
+    val gridText = Array<String>(30) { ""}
     var correctLetterString = ""
     val correctLetterList = mutableListOf<Char>()
     var incorrectLetterString = ""

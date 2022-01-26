@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.hfad.wordel.databinding.FragmentGameBinding
 private const val WORD_FILE_NAME = "words.txt"
@@ -34,6 +35,17 @@ class GameFragment : Fragment() {
         binding.correctLetters.text = viewModel.correctLetterString
         binding.incorrectLetters.text = viewModel.incorrectLetterString
 
+        binding.helpIcon.setOnClickListener {
+            val helpFragment = HelpFragment()
+            val fragmentManager = activity?.supportFragmentManager
+            if (fragmentManager != null) {
+                fragmentManager.beginTransaction()
+                    .add(R.id.fragment_container, helpFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .addToBackStack("_")
+                    .commit()
+            }
+        }
 
         binding.fab.setOnClickListener {
             val wordsFile = requireActivity().assets.open(WORD_FILE_NAME)
